@@ -113,6 +113,68 @@
             .hero h1 { font-size: 2rem; }
             body { padding-top: 64px; }
         }
+        /* ===== Manual Testimonial Slider ===== */
+.testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.testimonial-slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.testimonial-card span {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Slider buttons */
+.slider-btn {
+    background: #ffcc00;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.slider-btn:hover {
+    background: #e6b800;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        min-width: 260px;
+    }
     </style>
 </head>
 
@@ -215,17 +277,51 @@
 
 <section id="testimonials">
     <h2>Customer Reviews</h2>
-    <div class="testimonials">
-        <div class="testimonial">
-            <p>“Very professional driver and clean car. Highly recommended!”</p>
-            <strong>— Tourist</strong>
+    <p class="lead">Trusted by international travelers worldwide.</p>
+
+    <div class="testimonial-wrapper">
+        <button class="slider-btn left" onclick="slideTestimonials(-1)">&#10094;</button>
+
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+
+                <div class="testimonial-card">
+                    <p>“Excellent service from start to finish. Clean car and very professional driver.”</p>
+                    <span>🇦🇺 Sarah — Australia</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Smooth airport transfer with clear communication. Highly recommended.”</p>
+                    <span>🇬🇧 James — United Kingdom</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Flexible full-day tour and great local knowledge. Amazing experience.”</p>
+                    <span>🇩🇪 Michael — Germany</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“On-time pickup and safe driving. Very reliable service.”</p>
+                    <span>🇺🇸 David — United States</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Perfect for families. Comfortable car and friendly driver.”</p>
+                    <span>🇸🇬 Emily — Singapore</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Great value for money. Trusted local transport service.”</p>
+                    <span>🇫🇷 Lucas — France</span>
+                </div>
+
+            </div>
         </div>
-        <div class="testimonial">
-            <p>“On-time pickup and friendly service. Great experience in Bali.”</p>
-            <strong>— Tourist</strong>
-        </div>
+
+        <button class="slider-btn right" onclick="slideTestimonials(1)">&#10095;</button>
     </div>
 </section>
+
 
 <section id="contact">
     <h2>Contact & Booking</h2>
@@ -248,6 +344,22 @@ function toggleDetails(btn) {
     span.textContent = body.classList.contains('show') ? '-' : '+';
 }
 document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+let currentIndex = 0;
+
+function slideTestimonials(direction) {
+    const track = document.getElementById('testimonialTrack');
+    const cardWidth = track.children[0].offsetWidth + 24; // card + gap
+    const maxIndex = track.children.length - 1;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
 </script>
 
 </body>
