@@ -209,6 +209,93 @@
             .navbar { padding: 0.9rem 1.1rem; }
             .navbar nav a { margin-left: 1rem; }
         }
+        /* ===== Mobile & Navbar Hamburger (Fastcar Dewata) ===== */
+img { max-width: 100%; height: auto; display: block; }
+
+.container { padding-left: 16px; padding-right: 16px; }
+
+.navbar{
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 999;
+}
+
+.navbar .nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-toggle{
+  display: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.20);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+body{ padding-top: 72px; }
+
+.hero .cta{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px){
+  body{ padding-top: 64px; }
+
+  .hero h1{ font-size: 34px !important; line-height: 1.15; }
+  .hero p{ font-size: 15px !important; line-height: 1.5; }
+
+  section{ padding-top: 48px; padding-bottom: 48px; }
+
+  .nav-toggle{ display: inline-flex; }
+
+  .nav-links{
+    display: none;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 62px;
+    padding: 12px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .nav-links.is-open{ display: flex; }
+
+  .nav-links a{
+    padding: 12px;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .nav-links a:hover{
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero .cta a{
+    width: 100%;
+    text-align: center;
+  }
+}
+
     </style>
 </head>
 <body>
