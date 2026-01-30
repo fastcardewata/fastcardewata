@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Details – Fastcar Dewata</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --card:#ffffff;
+      --soft:#f5f7fb;
+      --text:#0f172a;
+      --muted:rgba(15,23,42,.70);
+      --gold:#d4af37;
+      --shadow: 0 14px 30px rgba(0,0,0,.10);
+      --r:18px;
+      --container:1100px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(10,14,22,.72);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;color:#fff;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.65rem;font-weight:800}
+    .brand-badge{
+      width:34px;height:34px;border-radius:12px;
+      background:radial-gradient(circle at 30% 20%, rgba(212,175,55,.95), rgba(212,175,55,.22));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 20px rgba(0,0,0,.18);
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:.75rem 1rem;border-radius:999px;font-weight:800;
+      border:1px solid transparent;cursor:pointer;transition:.18s ease;
+      white-space:nowrap
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, rgba(212,175,55,1), rgba(212,175,55,.86));
+      color:#111827; box-shadow:0 14px 30px rgba(212,175,55,.18);
+    }
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.ghost{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.18);
+      color:#fff;
+    }
+
+    .page{padding:2.2rem 0 3rem}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;align-items:start}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      padding:1.45rem;
+    }
+    .heroimg{
+      width:100%;height:260px;object-fit:cover;border-radius:16px;
+      border:1px solid rgba(15,23,42,.08);margin: .9rem 0 1rem;
+    }
+    .badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:.25rem .6rem;border-radius:999px;
+      background:rgba(212,175,55,.14);
+      border:1px solid rgba(212,175,55,.28);
+      color:#6b4f00;font-size:.82rem;font-weight:900;
+    }
+    h1{font-size:clamp(1.6rem,2.2vw,2.1rem);letter-spacing:-.03em;margin:.55rem 0 .25rem;line-height:1.15}
+    .price{display:flex;flex-wrap:wrap;gap:.55rem;align-items:baseline;margin:.6rem 0 1rem}
+    .price .big{font-size:1.55rem;font-weight:950;color:var(--gold)}
+    .price .unit{font-weight:900;color:rgba(15,23,42,.75)}
+    .muted{color:var(--muted)}
+    ul{padding-left:1.1rem}
+    li{margin:.35rem 0}
+    .section-title{margin-top:1.15rem;margin-bottom:.45rem;font-size:1.05rem;font-weight:900}
+    .note{
+      margin-top:.9rem;padding:.9rem 1rem;border-radius:14px;
+      background:rgba(15,23,42,.03);border:1px solid rgba(15,23,42,.08);
+      color:rgba(15,23,42,.80);font-size:.95rem
+    }
+
+    /* Form */
+    label{display:block;font-size:.88rem;font-weight:900;color:rgba(15,23,42,.85);margin:.55rem 0 .35rem}
+    input,select,textarea{
+      width:100%;padding:.7rem .8rem;border-radius:12px;border:1px solid rgba(15,23,42,.14);
+      font:inherit;background:#fff;outline:none
+    }
+    textarea{resize:vertical;min-height:90px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .form-actions{margin-top:1rem;display:grid;gap:.6rem}
+    .req{color:#e11d48;margin-left:.25rem}
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .heroimg{height:220px}
+      .row2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true"></span>
+        Fastcar Dewata
+      </div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <a class="btn ghost" href="index.html#packages">← Back</a>
+        <a class="btn primary" href="https://wa.me/6285850944572">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="grid">
+
+      <!-- LEFT: Detail -->
+      <section class="card">
+        <div class="badge" id="pkgCategory">Tour Package</div>
+        <h1 id="pkgTitle">Loading...</h1>
+
+        <div class="price">
+          <div class="big" id="pkgPrice">—</div>
+          <div class="unit" id="pkgUnit">—</div>
+        </div>
+
+        <img id="pkgImage" class="heroimg" src="" alt="Tour image" />
+
+        <p class="muted" id="pkgDesc"></p>
+
+        <h3 class="section-title">Itinerary</h3>
+        <ul id="pkgItinerary"></ul>
+
+        <h3 class="section-title">Includes</h3>
+        <ul id="pkgInclude"></ul>
+
+        <h3 class="section-title">Excluded</h3>
+        <ul id="pkgExclude"></ul>
+
+        <div class="note" id="pkgNote"></div>
+
+        <div class="form-actions" style="margin-top:1.1rem">
+          <button class="btn primary" type="button" id="ctaBtn">Book via WhatsApp</button>
+        </div>
+      </section>
+
+      <!-- RIGHT: Form -->
+      <aside class="card">
+        <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:.8rem">
+          <div style="font-weight:950" id="startFrom">Start from —</div>
+          <div class="muted">Fill the form, then click “Book via WhatsApp”.</div>
+        </div>
+
+        <form id="bookingForm">
+          <label>Your Name <span class="req">*</span></label>
+          <input id="fName" type="text" placeholder="Ex. John" required>
+
+          <label>Email <span class="req">*</span></label>
+          <input id="fEmail" type="email" placeholder="example@gmail.com" required>
+
+          <div class="row2">
+            <div>
+              <label>Phone / WhatsApp <span class="req">*</span></label>
+              <input id="fPhone" type="tel" placeholder="Enter phone number" required>
+            </div>
+            <div>
+              <label>Preferred Travel Date <span class="req">*</span></label>
+              <input id="fDate" type="date" required>
+            </div>
+          </div>
+
+          <label>Country <span class="req">*</span></label>
+          <select id="fCountry" required>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Australia">Australia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label>Tour / Activities Packages</label>
+          <input id="fPackage" type="text" value="" readonly>
+
+          <label>Number of People <span class="req">*</span></label>
+          <input id="fPeople" type="number" min="1" placeholder="Minimal 2 pax" required>
+
+          <label>Hotel / Accommodation Info</label>
+          <textarea id="fHotel" placeholder="Hotel name, area, pickup notes..."></textarea>
+
+          <div class="form-actions">
+            <button class="btn primary" type="button" id="formBookBtn">Book via WhatsApp</button>
+          </div>
+        </form>
+      </aside>
+
+    </div>
+  </main>
+
+  <script>
+    // ============================
+    // PACKAGE DATA (EDIT HERE)
+    // ============================
+    const PACKAGES = {
+      "private-daily-ubud": {
+        slug: "private-daily-ubud",
+        category: "Tour Package",
+        title: "PRIVATE DAILY Tour Ubud",
+        price: "IDR 700.000 / USD 44",
+        unit: "Avanza / Xenia (similar) — Innova / Hiace different price",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1400&q=80",
+        desc: [
+          "Enjoy a comfortable and flexible Private Daily Tour Ubud with Fastcar Dewata. This tour is perfect for travelers who want to explore Ubud’s top spots at a relaxed pace with a private car and an experienced local driver.",
+          "We’ll help you with recommendations, timing, tickets (if needed), and even taking photos/videos when possible—so you can focus on enjoying the journey."
+        ].join(" "),
+        itinerary: [
+          "Kuber Bali ATV Premium Package (Duration: 1.5 Hour) — natural tunnel, waterfall ride, rice fields, fun up–down trails.",
+          "BALI’S ICONIC MONKEY FOREST — Sacred Monkey Forest Sanctuary (Ubud Monkey Forest).",
+          "BALI ZOO — Bali’s first zoological park with rare & exotic animals and interactive activities.",
+          "Optional: if time allows, choose 1 more stop (restaurant / destination) still within Ubud route."
+        ],
+        include: [
+          "Private car (max 6 passengers without luggage)",
+          "Fuel / petrol",
+          "Parking fee (all destinations)",
+          "Mineral water",
+          "Driver helps you get tickets at destinations/activities",
+          "Driver helps take photo/video if possible"
+        ],
+        exclude: [
+          "Entrance tickets & activity fees",
+          "Lunch or dinner",
+          "Personal expenses"
+        ],
+        note: "Tour duration is 10 hours. Additional charge IDR 50.000/hour if more than 10 hours.",
+        ctaText: "Hi Fastcar Dewata, I want to book PRIVATE DAILY Tour Ubud."
+      },
+
+      "tour-bedugul": {
+        slug: "tour-bedugul",
+        category: "Tour Package",
+        title: "Tour Bedugul (Dummy)",
+        price: "Start from USD 55",
+        unit: "USD / Car",
+        image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80",
+        desc: "Dummy description for Bedugul tour. Replace with your real content later.",
+        itinerary: ["Stop 1 (Dummy)", "Stop 2 (Dummy)", "Stop 3 (Dummy)"],
+        include: ["Private car + driver", "Fuel", "Parking", "Mineral water"],
+        exclude: ["Entrance tickets", "Meals", "Personal expenses"],
+        note: "Dummy note. Replace later.",
+        ctaText: "Hi Fastcar Dewata, I want to book Tour Bedugul."
+      },
+
+      "south-bali-tour": {
+        slug: "south-bali-tour",
+        category: "Tour Package",
+        title: "Tour Kuta Selatan (Dummy)",
+        price: "Start from USD 50",
+        unit: "USD / Car",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80",
+        desc: "Dummy description for South Bali tour. Replace later.",
+        itinerary: ["Stop 1 (Dummy)", "Stop 2 (Dummy)", "Stop 3 (Dummy)"],
+        include: ["Private car + driver", "Fuel", "Parking", "Mineral water"],
+        exclude: ["Entrance tickets", "Meals", "Personal expenses"],
+        note: "Dummy note. Replace later.",
+        ctaText: "Hi Fastcar Dewata, I want to book Tour Kuta Selatan."
+      },
+
+      "north-bali-tour": {
+        slug: "north-bali-tour",
+        category: "Tour Package",
+        title: "Tour Bali Utara (Dummy)",
+        price: "Start from USD 60",
+        unit: "USD / Car",
+        image: "https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1400&q=80",
+        desc: "Dummy description for North Bali tour. Replace later.",
+        itinerary: ["Stop 1 (Dummy)", "Stop 2 (Dummy)", "Stop 3 (Dummy)"],
+        include: ["Private car + driver", "Fuel", "Parking", "Mineral water"],
+        exclude: ["Entrance tickets", "Meals", "Personal expenses"],
+        note: "Dummy note. Replace later.",
+        ctaText: "Hi Fastcar Dewata, I want to book Tour Bali Utara."
+      },
+
+      // Optional: match index.html airport card
+      "airport-transfer": {
+        slug: "airport-transfer",
+        category: "Airport Transfer",
+        title: "Airport Transfer Service",
+        price: "Start from USD 10",
+        unit: "USD / Car",
+        image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1400&q=80",
+        desc: "Airport pickup & dropoff service from Ngurah Rai International Airport. Price depends on destination area (Kuta, Ubud, Canggu, etc.).",
+        itinerary: ["Pickup at Ngurah Rai Airport", "Drive to your hotel / destination", "Optional stop on request (time dependent)"],
+        include: ["Private car + driver", "Fuel", "Parking (when applicable)", "Mineral water"],
+        exclude: ["Toll (if any)", "Personal expenses"],
+        note: "Please send flight number & landing time for smoother pickup.",
+        ctaText: "Hi Fastcar Dewata, I want to book Airport Transfer."
+      }
+    };
+
+    // Load by slug ?pkg=
+    const params = new URLSearchParams(window.location.search);
+    const slug = (params.get("pkg") || "private-daily-ubud").trim();
+    const pkg = PACKAGES[slug] || PACKAGES["private-daily-ubud"];
+
+    // Fill UI
+    document.title = `${pkg.title} – Fastcar Dewata`;
+    document.getElementById("pkgCategory").textContent = pkg.category || "Tour Package";
+    document.getElementById("pkgTitle").textContent = pkg.title;
+    document.getElementById("pkgPrice").textContent = pkg.price;
+    document.getElementById("pkgUnit").textContent = pkg.unit;
+    document.getElementById("pkgImage").src = pkg.image;
+    document.getElementById("pkgImage").alt = pkg.title;
+    document.getElementById("pkgDesc").textContent = pkg.desc;
+    document.getElementById("pkgNote").textContent = pkg.note || "";
+    document.getElementById("startFrom").textContent = `Start from ${pkg.price}`;
+    document.getElementById("fPackage").value = pkg.title;
+
+    function renderList(elId, items){
+      const el = document.getElementById(elId);
+      el.innerHTML = "";
+      (items || []).forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = t;
+        el.appendChild(li);
+      });
+    }
+    renderList("pkgItinerary", pkg.itinerary);
+    renderList("pkgInclude", pkg.include);
+    renderList("pkgExclude", pkg.exclude);
+
+    // WhatsApp booking
+    const WA_NUMBER = "6285850944572";
+
+    function buildWAText(){
+      const name = document.getElementById("fName").value.trim();
+      const email = document.getElementById("fEmail").value.trim();
+      const phone = document.getElementById("fPhone").value.trim();
+      const date = document.getElementById("fDate").value;
+      const country = document.getElementById("fCountry").value;
+      const people = document.getElementById("fPeople").value;
+      const hotel = document.getElementById("fHotel").value.trim();
+
+      const lines = [
+        pkg.ctaText || `Hi Fastcar Dewata, I want to book ${pkg.title}.`,
+        "",
+        `Package: ${pkg.title}`,
+        `Travel date: ${date || "-"}`,
+        `Name: ${name || "-"}`,
+        `Email: ${email || "-"}`,
+        `Phone: ${phone || "-"}`,
+        `Country: ${country || "-"}`,
+        `People: ${people || "-"}`,
+        `Hotel/Info: ${hotel || "-"}`
+      ];
+      return lines.join("\n");
+    }
+
+    function goWhatsApp(){
+      const form = document.getElementById("bookingForm");
+      if (!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildWAText())}`;
+      window.open(url, "_blank");
+    }
+
+    document.getElementById("formBookBtn").addEventListener("click", goWhatsApp);
+    document.getElementById("ctaBtn").addEventListener("click", () => {
+      document.querySelector("aside.card").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  </script>
+</body>
+</html>
