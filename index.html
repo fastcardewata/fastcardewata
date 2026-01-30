@@ -175,6 +175,44 @@
     .testimonial-card {
         min-width: 260px;
     }
+    /* ===== Contact Centered Card ===== */
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 720px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 1.6rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.contact-card p {
+  margin-bottom: 0.6rem;
+  color: #333;
+}
+
+.contact-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 1.2rem;
+  }
+  .contact-btn {
+    width: 100%;
+    text-align: center;
+  }
     </style>
 </head>
 
@@ -324,12 +362,18 @@
 
 
 <section id="contact">
-    <h2>Contact & Booking</h2>
-    <p class="lead">Contact us anytime for booking or travel consultation.</p>
-    <p>WhatsApp: <a href="https://wa.me/6285850944572">+62 858 5094 4572</a></p>
-    <p>Email: fastcardewata@gmail.com</p>
-    <p>Location: Tuban, Kuta – Bali</p>
-    <a href="https://wa.me/6285850944572" class="btn">Chat on WhatsApp</a>
+  <h2>Contact & Booking</h2>
+  <p class="lead">Contact us anytime for booking or travel consultation.</p>
+
+  <div class="contact">
+    <div class="contact-card">
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/6285850944572">+62 858 5094 4572</a></p>
+      <p><strong>Email:</strong> <a href="mailto:fastcardewata@gmail.com">fastcardewata@gmail.com</a></p>
+      <p><strong>Location:</strong> Tuban, Kuta – Bali</p>
+
+      <a href="https://wa.me/6285850944572" class="btn contact-btn">Chat on WhatsApp</a>
+    </div>
+  </div>
 </section>
 
 <footer>
