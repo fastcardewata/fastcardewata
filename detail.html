@@ -105,6 +105,43 @@
       .heroimg{height:220px}
       .row2{grid-template-columns:1fr}
     }
+    /* ===============================
+   MOBILE FIX – IMAGES (FINAL)
+   =============================== */
+
+/* DETAIL PAGE – HERO IMAGE (SVG / FOTO) */
+.heroimg{
+  width:100%;
+  height:260px;
+  display:block;
+  object-fit:contain;      /* SVG aman */
+  object-position:center;
+  background:#f5f7fb;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.08);
+  margin:.9rem 0 1rem;
+  padding:14px;
+}
+
+/* INDEX PAGE – CARD IMAGE */
+.pkg-media{
+  height:220px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-color:#f3f5f9;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 520px){
+  .heroimg{
+    height:190px;
+    padding:10px;
+    border-radius:14px;
+  }
+  .pkg-media{
+    height:170px;
+    background-size:contain; /* SVG tetap rapi di HP */
+  }
   </style>
 </head>
 
@@ -443,6 +480,7 @@
   </script>
 </body>
 </html>
+
 
 
 
