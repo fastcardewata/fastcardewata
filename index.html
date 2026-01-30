@@ -557,6 +557,54 @@
     height:170px;
     background-size:contain; /* SVG tetap rapi di HP */
   }
+  /* ==================================
+   MOBILE FIX – TESTIMONIALS (FINAL)
+   ================================== */
+
+/* Wrapper aman */
+.testimonial-wrapper{
+  position:relative;
+}
+
+/* Desktop default (biarkan slider JS kamu tetap jalan) */
+.testimonial-slider{
+  overflow:hidden;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px){
+
+  /* Jadikan swipe-friendly */
+  .testimonial-slider{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .testimonial-track{
+    display:flex;
+    gap:14px;
+    scroll-snap-type:x mandatory;
+    padding-bottom:6px;
+  }
+
+  .testimonial-card{
+    flex:0 0 85%;
+    scroll-snap-align:start;
+    border-radius:16px;
+  }
+
+  /* Tombol panah disembunyikan di HP */
+  .slider-btn{
+    display:none;
+  }
+}
+
+/* Extra kecil (HP kecil) */
+@media (max-width: 420px){
+  .testimonial-card{
+    flex-basis:92%;
+  }
+}
   </style>
 </head>
 
