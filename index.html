@@ -98,6 +98,32 @@
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: 0 10px 20px rgba(0,0,0,.18);
     }
+      /* ===============================
+   FIX LOGO ALIGNMENT – FINAL
+   TANPA UBAH STRUKTUR
+   =============================== */
+
+/* Paksa navbar jadi satu garis vertikal */
+.navbar{
+  display:flex;
+  align-items:center;
+}
+
+/* Brand tidak naik sendiri */
+.brand{
+  display:flex;
+  align-items:center;
+  line-height:1;
+}
+
+/* Logo ukuran stabil & sejajar */
+.brand-logo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  display:block;
+}
+    }
     .nav-links{
       display:flex; gap: .35rem;
       align-items:center;
